@@ -108,8 +108,10 @@ class CBT_Theme_Locale_EscapeTextContentOfBlocks extends CBT_Theme_Locale_UnitTe
                     <!-- /wp:verse -->',
 				'expected_markup' =>
 					'<!-- wp:verse {"style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
-                    <pre class="wp-block-verse"><?php esc_html_e(\'Ya somos el olvido que seremos.<br>El polvo elemental que nos ignora<br>y que fue el rojo Adán y que es ahora<br>todos los hombres, y que no veremos.\', \'test-locale-theme\');?></pre>
-                    <!-- /wp:verse -->',
+					<pre class="wp-block-verse"><?php
+					/* Translators: %s are html tags */
+					echo sprintf( esc_html__( \'%sYa somos el olvido que seremos.%sEl polvo elemental que nos ignora%sque fue el rojo Adán y que es ahora%stodos los hombres, y que no veremos.%s\', \'test-locale-theme\' ), \'<br>\', \'<br>\', \'<br>\', \'<br>\', \'<br>\' ); ?></pre>
+					<!-- /wp:verse -->',
 			),
 
 			'button'                     => array(
